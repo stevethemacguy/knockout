@@ -1,0 +1,94 @@
+/*testing colors*/
+html {
+    background: black;
+}
+
+body {
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    background: white;
+}
+
+nav {
+    height: 28px;
+    width: 1000px;
+    background: darkslategray;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.main {
+    position: relative;
+    float: left;
+    width: 50px;
+    padding: 4px;
+    padding-top: 7px;
+    padding-left: 7px;
+}
+
+.main:hover {
+    cursor: pointer;
+}
+
+.items {
+    position: relative;
+    background: lightblue;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.items.left {
+    left: -5000px; /*hide it*/
+}
+
+.items.right {
+    left: 5000px; /*hide it*/
+}
+
+.main:hover .left {
+    left: 0;
+
+}
+
+.main:hover .right {
+    left: 0;
+
+}
+
+.items:hover /*When the main <li>s are hovered over, the children lis will appear*/
+{
+    background: darkblue;
+    color: white;
+
+}
+
+.second {
+    position: absolute; /*based on .main's position (set as relative)*/
+    top: 28px;
+    left: 6px;
+}
+
+.items:active {
+    color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
