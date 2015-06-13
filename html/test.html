@@ -21,10 +21,20 @@
       <td><input data-bind="value: name"/> </td>
       <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
       <td data-bind="text: meal().price"></td>
+      <td data-bind="text: formattedPrice"></td>
+      <!--root is used to find a value in the viewmodel outside of the scope of the current seat reservation-->
+      <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
     </tr>
     </tbody>
   </table>
-  <button data-bind="click: addSeat">Reserve a seat</button>
+  <!--The add button because disabled if the number of seats grows past 6-->
+  <button data-bind="click: addSeat, enable: seats().length < 6">Reserve a seat</button>
+  <h3>Your seat reservations (<span data-bind="text: seats().length"></span>)</h3>
+
+  <!--Only displays the total charge if it's greater than zero-->
+  <div data-bind="visible: totalCharge() > 0">
+    <h3>Total Charge: <span data-bind="text: totalCharge().toFixed(2)"></span></h3>
+  </div>
 </body>
 </html>
 
