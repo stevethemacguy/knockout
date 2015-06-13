@@ -9,40 +9,22 @@
     <script type='text/javascript' src='../js/knockout-3.3.0.js'></script>
 </head>
 <body>
-<nav>
-    <ul>
-        <li class="main one"><span>Select</span>
-            <ul class="second one">
-                <li class="item1 items left">item1</li>
-                <li class="item2 items right">item2</li>
-                <li class="item3 items left">item3</li>
-                <li class="item4 items right">item4</li>
-            </ul>
-        </li>
-        <li class="main two"><span>Select</span>
-            <ul class="second two">
-                <li class="item1 items left">item1</li>
-                <li class="item2 items right">item2</li>
-            </ul>
-        </li>
-        <li class="main special"><span>Select</span></li>
-        <li class="main three"><span>Select</span>
-            <ul class="second three">
-                <li class="item1 items left">one</li>
-                <li class="item2 items right">two</li>
-                <li class="item3 items left">three</li>
-                <li class="item4 items right">four</li>
-                <li class="item5 items left">five</li>
-                <li class="item6 items right">six</li>
-                <li class="item7 items left">seven</li>
-                <li class="item8 items right">eigth</li>
+  <div>FOR EACH LOOPS</div>
+  <h2>Your seat reservations</h2>
 
-            </ul>
-        </li>
-        <li class="main"><span>Select</span></li>
-    </ul>
-</nav>
-
+  <table>
+    <thead><tr>
+      <th>Passenger name</th><th>Meal</th><th>Surcharge</th><th></th>
+    </tr></thead>
+    <tbody data-bind="foreach: seats">
+    <tr>
+      <td><input data-bind="value: name"/> </td>
+      <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
+      <td data-bind="text: meal().price"></td>
+    </tr>
+    </tbody>
+  </table>
+  <button data-bind="click: addSeat">Reserve a seat</button>
 </body>
 </html>
 
