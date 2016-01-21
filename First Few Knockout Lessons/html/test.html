@@ -9,20 +9,6 @@
     <script type='text/javascript' src='../js/knockout-3.3.0.js'></script>
 </head>
 <body>
-  <input data-bind="textInput: first"/>
-  <input data-bind="textInput: last"/>
-  <h1 data-bind="text: full, visible: full"></h1>
-
-  <ul data-bind="foreach: planets">
-      <li>
-          Planet: <b data-bind="text: name"> </b>
-          <div data-bind="if: capital">
-              Capital: <b data-bind="text: capital.cityName"> </b>
-          </div>
-      </li>
-  </ul>
-
-
   <div>FOR EACH LOOPS</div>
   <h2>Your seat reservations</h2>
 

@@ -13,21 +13,10 @@ $(document).ready(function() {
         });
     }
 
-    self.planets = ko.observableArray([
-        { name: 'Mercury', capital: null },
-        { name: 'Earth', capital: { cityName: 'Barnsley' } }
-    ]);
-
     // Overall viewmodel for this screen, along with initial state
     function ReservationsViewModel() {
         var self = this;
 
-        self.first = ko.observable("");
-        self.last = ko.observable("");
-        self.full = ko.computed(function()
-        {
-            return self.first() +" "+ self.last();
-        });
         // Non-editable catalog data - come sfrom the server
         self.availableMeals = [
             { mealName: "Standard (sandwich)", price: 0 },
